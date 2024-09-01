@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Home
+{% endblock page_title %}
+
+
+{% block contents %}
+    <h1>Home</h1>
+    <p> Selamat Datang di <b>{{ request.user }}</b></p>
+    <div class="row">
+        {% for novel in latest_novel_list %}
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h5 class="card-title"><a href="{% url 'novel:category' novel.kategori 1 %}">{{novel.kategori}}</a></h5>
+                    <h6 class="card-subtitle mb-2 text-dark">{{novel.judul}}</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{novel.published|date}}</h6>
+                    <p class="card-text">{{novel.isi|truncatewords:10}}</p>
+                    <a href="{% url 'novel:detail' novel.slug %}" class="card-link">Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    
+{% endblock contents %}

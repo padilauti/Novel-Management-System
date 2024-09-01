@@ -1,0 +1,50 @@
+ <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="{% url 'home' %}">DATA BUKU</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'novel:list' 1 %}">Novel</a>
+              </li>
+            </ul>
+
+               <!-- Container untuk dropdown dan logout link -->
+               <div class="d-flex align-items-center ms-auto">
+                <!-- Link Logout -->
+                <ul class="navbar-nav me-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                </ul>
+            
+
+            <div class="nav-item dropdown ms-auto">
+                <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  User
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'novel:create' %}">Tambah Novel</a></li>
+                  <li><a class="dropdown-item" href="{% url 'novel:manage' %}">Manage Novel</a></li>
+                </ul>
+            </div>
+
+           </div>
+          </div>
+        </div>
+    </nav>
+
+
+
+
+
+    

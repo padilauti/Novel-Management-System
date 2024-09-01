@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    {{novel.judul}}
+{% endblock page_title %}
+
+{% block contents %}
+<div class="row">
+    <div class="col-md-8">
+        <h1>{{novel.judul}}</h1>
+        <h5>Kategori: {{novel.kategori}} | {{novel.published}}</h5>
+        <p>{{novel.isi}}</p>
+    </div>
+    <div class="col-sm">
+        <h3>Kategori</h3>
+        <ul class="list-group list-group-flush">
+            <ul class="list-group list-group-flush">
+                {% for kategori in kategori_list %}
+                    <li class="list-group-item"><a href="{% url 'novel:category' kategori 1 %}">{{kategori}}</a></li>
+                {% endfor %}
+            </ul>
+        </ul>
+        <h3>Artikel serupa</h3>
+        <ul class="list-group list-group-flush">
+            {% for novel in novel_serupa %}
+
+                {% if forloop.counter is not 3 %}
+                <li class="list-group-item">
+                    <h5><a href="{% url 'novel:detail' novel.slug %}">{{novel.judul}}</a></h5>
+                    <p>{{novel.published|date}}</p>
+                </li>
+                {% endif %}
+
+            {% endfor %}
+            <li class="list-group-item"><a href="{% url 'novel:category' novel.kategori 1 %}">Selengkapnya</a></li>
+        </ul>
+    </div>
+</div>
+    
+{% endblock contents %}
