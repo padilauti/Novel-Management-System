@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Novel Management System
 
 Project Dalam membuat web dengan Django Adminstratios 
@@ -23,4 +24,7 @@ Aplikasi ini dibangun dengan menggunkan :
 - Django 5.1 or later
 - Bootstrap 5.3 or later
 - MySQL 8.0.30 or later 
+=======
+# Novel-Management-System
+>>>>>>> 2d520e76f41e96112b111d929b53534e66a8ce49
 
